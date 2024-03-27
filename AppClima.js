@@ -39,7 +39,7 @@ const AppClima = () => {
 
   useEffect(() => {
     buscarDadosClimaticos();
-  }, []);
+  }, [city]);
 
   if (!dadosClima) {
     return <Text>Carregando...</Text>;
@@ -52,8 +52,7 @@ const AppClima = () => {
           <TouchableOpacity
             key={cityOption}
             onPress={() =>{
-              setCity(cityOption)
-              buscarDadosClimaticos();
+              setCity(cityOption);
             }}
             style={[
               styles.cityButton,
